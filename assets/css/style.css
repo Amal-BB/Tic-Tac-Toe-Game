@@ -3,4 +3,42 @@
 
 * {
     font-family: 'Satisfy', cursive;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+body {
+    width:75%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color:white;
+    min-width: min-content;
+    margin: 0 auto;
+}
+
+.page-container {
+    background-color:#ada7ad;
+    margin: 5px 0;
+    padding: 10px auto;
+}
+
+header{
+    padding: .5em .5em;
+    height: fit-content;
+    width: fit-content;
+    overflow: hidden;
+    margin: 0 auto;
+    text-align: center;
+}
+
+header img{
+     float: left;
+     margin-right: 1em;
+}
+
+header h1{
+     color: #272626;
+     font-size: 3em;
+     text-shadow: 2px 2px 5px rgb(250, 245, 245);
+     display: inline-flex;
 }
