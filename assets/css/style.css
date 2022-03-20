@@ -17,9 +17,10 @@ body {
 }
 
 .page-container {
-    background-color:#ada7ad;
+    background-color:#f1d4f1;
     margin: 5px 0;
     padding: 10px auto;
+    overflow: auto;
 }
 
 header{
@@ -41,4 +42,35 @@ header h1{
      font-size: 3em;
      text-shadow: 2px 2px 5px rgb(250, 245, 245);
      display: inline-flex;
+}
+
+.game-area{
+    margin: 2em auto;
+    width: fit-content;
+    overflow: auto;
+}
+
+.game-area .row{
+    overflow: hidden;
+}
+
+.row-border{
+    border-bottom: .3em ridge #272626;
+    
+}
+
+.cell{
+    width:5em;
+    height:5em;
+    float: left; 
+    text-align: center;
+    
+}
+
+.cell-border{
+    border-right:  .3em ridge #272626;
+}
+
+.cell img{
+    margin: 0.5em;  
 }
