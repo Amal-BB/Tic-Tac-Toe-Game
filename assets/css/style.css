@@ -44,6 +44,21 @@ header h1{
      display: inline-flex;
 }
 
+.game-menu{
+     width: 100%;
+     margin: 1em auto;
+     overflow: hidden;
+}
+
+.game-menu ul{
+    display: inline;
+}
+
+.game-menu li{
+    display: inline-flex;
+    font-size:1em;
+}
+
 .game-area{
     margin: 2em auto;
     width: fit-content;
