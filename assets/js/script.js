@@ -1,16 +1,25 @@
-console.log("hello");
-
+// create function for menu elements event to change the display area.
 function changeDisplayArea(element)
 {
-    console.log(element);
+    // get the active element in game menu
     let activeElement=document.getElementsByClassName('active')[0];
-    console.log(activeElement);
-    
- 
+    // check if the clicked element isn't the active element
     if(element!=activeElement)
       {
-        activeElement.classList.remove("active");  
+        // remove active class from unclicked element
+        activeElement.classList.remove("active"); 
+        // add active class to the clicked element 
         element.classList.add('active');
+        if(element.id=='play')
+          {
+            document.getElementById('game-area').style.display='block';
+            document.getElementById('instruction-area').style.display='none';
+          }
+        else
+        {
+          document.getElementById('game-area').style.display='none';
+          document.getElementById('instruction-area').style.display='block';
+        }
       }
       
     

@@ -66,27 +66,30 @@ header h1{
     background-color: #a52a2a;
 }
 
-.game-area{
+#game-area, 
+#instruction-area{
     margin: 2em auto;
     width: fit-content;
     overflow: auto;
 }
 
-.game-area .row{
+#instruction-area{
+    display: none;
+}
+
+#game-area .row{
     overflow: hidden;
 }
 
 .row-border{
-    border-bottom: .3em ridge #272626;
-    
+    border-bottom: .3em ridge #272626;   
 }
 
 .cell{
     width:5em;
     height:5em;
     float: left; 
-    text-align: center;
-    
+    text-align: center;    
 }
 
 .cell-border{
