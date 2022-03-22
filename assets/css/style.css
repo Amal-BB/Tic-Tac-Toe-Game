@@ -45,18 +45,25 @@ header h1{
 }
 
 .game-menu{
-     width: 100%;
-     margin: 1em auto;
-     overflow: hidden;
+    text-align: center;
+    margin: 1em auto;
+    overflow: hidden;
+    font-size: 2em;
+    border-bottom: 1px solid #f1ebeb;;
+    background-color: rgb(90, 62, 74);
+    color: white;
 }
 
-.game-menu ul{
-    display: inline;
+.game-menu span{
+    display: inline-block;
+    width: 5em;
+    line-height: 2.3em;
+    cursor: pointer;
+    margin: 0;
 }
 
-.game-menu li{
-    display: inline-flex;
-    font-size:1em;
+.active{
+    background-color: #a52a2a;
 }
 
 .game-area{
