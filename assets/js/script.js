@@ -12,12 +12,12 @@ function changeDisplayArea(element)
         element.classList.add('active');
         if(element.id=='play')
           {
-            document.getElementById('game-area').style.display='block';
+            document.getElementById('play-area').style.display='block';
             document.getElementById('instruction-area').style.display='none';
           }
         else
         {
-          document.getElementById('game-area').style.display='none';
+          document.getElementById('play-area').style.display='none';
           document.getElementById('instruction-area').style.display='block';
         }
       }
