@@ -131,27 +131,26 @@ img{
     text-decoration: underline;
     color: #c4bfbf;
     cursor: help;
+    font-family:serif;
 }
 
-span[data-descr]:hover::after,
-span[data-descr]:focus::after {
+span[data-descr]:hover::after {
   content: attr(data-descr);
   position: absolute;
   left: 0;
-  top: 24px;
-  min-width: 200px;
-  border: 1px #aaaaaa solid;
+  top: 30px;
+  width: 12em;
+  border: 1px solid #a52a2a;
   border-radius: 10px;
   background-color: #ffffcc;
-  padding: 12px;
+  padding: .1em;
   color: #000000;
-  font-size: 14px;
+  font-size: .9em;
   z-index: 1;
 }
 
 span.score{
-   border-top: 1px solid #ffffff;
-   
+   border-top: 1px solid #ffffff;   
 }
 
 .players-score img{
