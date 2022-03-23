@@ -79,6 +79,7 @@ header h1{
 
 .game-place .row{
     overflow: hidden;
+    width: fit-content;
 }
 
 .row-border{
@@ -116,13 +117,36 @@ img{
     background-color: #5a3e4a;
     color: #ffffff;
     display: inline-block;
-    width: 3.6em;
+    width: 3em;
     text-align: center;
 }
 
 #player{
     border: 2px solid #c70303;
     cursor: pointer;
+}
+
+#player[data-descr] {
+    position: relative;
+    text-decoration: underline;
+    color: #c4bfbf;
+    cursor: help;
+}
+
+span[data-descr]:hover::after,
+span[data-descr]:focus::after {
+  content: attr(data-descr);
+  position: absolute;
+  left: 0;
+  top: 24px;
+  min-width: 200px;
+  border: 1px #aaaaaa solid;
+  border-radius: 10px;
+  background-color: #ffffcc;
+  padding: 12px;
+  color: #000000;
+  font-size: 14px;
+  z-index: 1;
 }
 
 span.score{
