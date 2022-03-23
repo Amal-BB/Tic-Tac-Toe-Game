@@ -110,27 +110,29 @@ img{
 }
 
 .players-score span{
-    line-height: 2em;
+    line-height: 1.8em;
     font-size: 1em;
     border-radius: .6em;
     background-color: #5a3e4a;
     color: #ffffff;
     display: inline-block;
-    width: 3em;
+    width: 3.6em;
     text-align: center;
 }
 
 #player{
     border: 2px solid #c70303;
+    cursor: pointer;
 }
 
 span.score{
    border-top: 1px solid #ffffff;
+   
 }
 
 .players-score img{
     width: 20px;
-    margin-top: .6em;
+    margin-top: .4em;
 }
 /* Media queries */
 /* For larg screen sizes from 600px wide and up */

@@ -20,7 +20,28 @@ function changeDisplayArea(element)
           document.getElementById('play-area').style.display='none';
           document.getElementById('instruction-area').style.display='block';
         }
-      }
-      
+      }   
     
 }
+//create function to change player icon to X or O
+function changePlayerIcon()
+{
+  let playerIcon=document.getElementById("player-icon");
+  let computerIcon=document.getElementById("computer-icon");
+  console.log(playerIcon);
+  console.log(playerIcon.alt);
+    if (playerIcon.alt=="o-icon")
+        {
+          playerIcon.setAttribute("src","assets/images/x-icon.png");
+          playerIcon.setAttribute("alt","x-icon");
+          computerIcon.setAttribute("src","assets/images/o-icon.png");
+          computerIcon.setAttribute("alt","o-icon");
+        }
+    else
+       {
+        playerIcon.setAttribute("src","assets/images/o-icon.png");
+        playerIcon.setAttribute("alt","o-icon");
+        computerIcon.setAttribute("src","assets/images/x-icon.png");
+        computerIcon.setAttribute("alt","x-icon");
+       }
+} 
