@@ -104,6 +104,34 @@ img{
     width:4.3em;
 }
 
+.players-score{
+    margin: 2em auto;
+    width: fit-content;
+}
+
+.players-score span{
+    line-height: 2em;
+    font-size: 1em;
+    border-radius: .6em;
+    background-color: #5a3e4a;
+    color: #ffffff;
+    display: inline-block;
+    width: 3em;
+    text-align: center;
+}
+
+#player{
+    border: 2px solid #c70303;
+}
+
+span.score{
+   border-top: 1px solid #ffffff;
+}
+
+.players-score img{
+    width: 20px;
+    margin-top: .6em;
+}
 /* Media queries */
 /* For larg screen sizes from 600px wide and up */
 @media screen and (min-width: 600px) {
