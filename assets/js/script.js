@@ -63,7 +63,10 @@ for(let cell of cells)
   });
 }
 
-//The main function to run the game, called after user clicked on the game grid cell
+/**  
+ * The main function to run the game, 
+ * called after user clicked on the game grid cell
+*/
 async function runGame(cell,playerIconSrc,computerIconSrc)
 {
   //set player icon on the game cell
@@ -149,19 +152,19 @@ function getComputerState(){
   let match=null;
   if(game.computer.states.length>=2)
     {
-      match=checkMatchedState(game.computer.states);
+      match=checkMatchedWinningState(game.computer.states);
       if (match != null) return match;
     }
   if(game.player.states.length>=2)
     {
-      match=checkMatchedState(game.player.states);
+      match=checkMatchedWinningState(game.player.states);
       if (match != null) return match; 
     }
   return game.availableCells[Math.floor(Math.random()*game.availableCells.length)];
   
 }     
  
-function checkMatchedState(playerStates){
+function checkMatchedWinningState(playerStates){
   if(playerStates != null)
    { 
     let i=0;
@@ -202,21 +205,30 @@ function checkGameWinner(player){
     {
       console.log("check : "+ state);
       setTimeout(() => alert(player.playerIcon + " Win !"),500); 
-      //window.alert(player.playerIcon + " Win !")
+      gameOver();
        break;
       //gameOver();
     }
   
 };
 
-// end the game
+// End the game
 function gameOver()
 {
-  console.log("game over");
-
+  //show the end of game msg in dialog box 
+  dbox(null,"game Over");
+   
 }
 
 });
+
+// create function to show dialog box with two option
+function dbox (element,msg) {
+  if (msg != undefined) {
+    document.getElementById("boxTxt").innerHTML = msg;
+    document.getElementById("boxBack").classList.add("show");
+  } else { document.getElementById("boxBack").classList.remove("show"); }
+}
 // create function for menu elements click event to change the display area.
 function changeDisplayArea(element)
 {
@@ -243,7 +255,7 @@ function changeDisplayArea(element)
     
 }
 
-//create function to change player icon to X or O
+/* Do swap between player and computer icons (X and O) */
 function changePlayerIcon(xIconSrc,oIconSrc)
 {
   const playerIcon=document.getElementById("player-icon");
@@ -264,4 +276,14 @@ function changePlayerIcon(xIconSrc,oIconSrc)
         computerIcon.setAttribute("src",xIconSrc);
         computerIcon.setAttribute("alt","x-icon");
        }
+       const cells=document.getElementsByClassName('cell');
+       cells.forEach(c=> {
+        if(c.hasAttribute("data-type"))   
+         {
+           if(c.getAttribute("data-type").value =="player" )
+            c.getAttribute();
+         }
+
+           
+       });
 } 

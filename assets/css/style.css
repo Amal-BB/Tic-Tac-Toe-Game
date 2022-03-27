@@ -157,6 +157,53 @@ span.score{
     width: 20px;
     margin-top: .4em;
 }
+
+/* (A) BACKGROUND */
+#boxBack {
+    /* (A1) FULLSCREEN */
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+   
+    /* (A2) TRANSPARENT BACKGROUND */
+    background: rgba(0, 0, 0, 0.5);
+   
+    /* (A3) HIDDEN BY DEFAULT */
+    display: none;
+  }
+   
+  /* (A4) ADD THIS CSS CLASS TO SHOW */
+  #boxBack.show { display: block; }
+   
+  /* (B) DIALOG BOX */
+  #boxWrap {
+    /* (B1) CENTER ON SCREEN */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    min-width: 200px;
+    max-width: 600px;
+    padding: 0.6rem;
+    background: #fff;
+    font-size: 1.3rem;
+  }
+  
+  #boxText{
+    margin: 1rem auto;
+  }
+
+  #boxWrap input{
+    display: inline-block;
+    margin: 0.5rem;
+    padding: 0.7rem;
+    background: #c70303;
+    color: white;
+  }
+
 /* Media queries */
 /* For larg screen sizes from 600px wide and up */
 @media screen and (min-width: 600px) {
