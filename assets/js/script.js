@@ -17,6 +17,7 @@ let game = { nextTurn: null ,
               score:0,
             },
             ties:0,
+            availableCells:['0','1','2','3','4','5','6','7','8'],
 }
 const winningStates=[
   // Rows
@@ -42,104 +43,180 @@ for(let cell of cells)
 {
   console.log(cell.hasAttribute("data"));
   cell.addEventListener("click",function(){
-    //check if the cell has been selected before
+    if(game.availableCells.length!=0)
+    {
+    // check if it is not computer turn
     if(game.nextTurn!='computer')
-      if(! this.hasAttribute("data-type"))
-      { 
-        turnCounter++;
-        let playerIconSrc=document.getElementById("player-icon").alt=='x-icon' ? xIconSrc : oIconSrc;   
-        let computerIconSrc=playerIconSrc==oIconSrc ? xIconSrc : oIconSrc;   
-        
-        runGame(this,playerIconSrc,computerIconSrc);
+      if(! this.hasAttribute("data-type"))//check if the cell has been selected before
+       { 
+          turnCounter++;
+          let playerIconSrc=document.getElementById("player-icon").alt=='x-icon' ? xIconSrc : oIconSrc;   
+          let computerIconSrc=playerIconSrc==oIconSrc ? xIconSrc : oIconSrc;   
+          runGame(this,playerIconSrc,computerIconSrc);
+       }
+      }   
+      else
+      {
+          gameOver();
       }
+    
   });
 }
 
 //The main function to run the game, called after user clicked on the game grid cell
-function runGame(cell,playerIconSrc,computerIconSrc)
+async function runGame(cell,playerIconSrc,computerIconSrc)
 {
   //set player icon on the game cell
   //console.log(playerIconSrc);
   //console.log(cell);
-  let plyerImage='<img src='+ playerIconSrc +' />';
+  //let plyerImage='<img src='+ playerIconSrc +' />';
   //console.log(plyerImage);
-  cell.innerHTML=plyerImage;
-  cell.setAttribute("data-type",'player');
+  
+     //setTimeout(function() {resolve("I love You !!");}, 3000);
+  game.nextTurn='computer';
+  let myPromise = new Promise(function(resolve) {
+    resolve('<img src='+ playerIconSrc +' />');});
+       
+  cell.innerHTML= await myPromise;
+  cell.setAttribute("data-type",'player'); 
   game.player.playerIcon=playerIconSrc== xIconSrc ? 'x' : 'o';
   console.log("item id:"+cell.getAttribute("itemid"));
   game.player.states.push(cell.getAttribute("itemid"));
-  game.nextTurn='computer';
+  // remove selected cell number from game avaliableCells
+  removeSlectedCell(cell.getAttribute("itemid"));
+  
   // check if player reach 3 play turns or more  
   if(game.player.states.length >=3 )
   {
-    //check if user enter winning states
-    checkGameWinner('player '+ game.player.playerIcon);
+    //check if player has winning states
+    console.log("check user palyer winning states");
+    checkGameWinner(game.player);
   }
   console.log("player statues:" + game.player.states);
   console.log("computer statues:" + game.computer.states);
-  // set computer icon on the game cell
-  let randomCell;
-  let i=0;
-  do
+  
+  if(game.availableCells.length==0)
   {
-    // in case of first turn for computer
-    if(game.computer.states.length==0) 
-      randomCell= Math.floor(Math.random() * 8) ;
-    else 
-      do
-      {
-        let state=winningStates[i++];
-        console.log("turn counter"+turnCounter);
-        console.log("computer states"+game.computer.states[turnCounter-2]);
-        if(state.includes(game.computer.states[turnCounter-2]))
-        {
-          let increment=parseInt(state[2])-parseInt(state[1]);
-          console.log("increment"+increment);
-          randomCell=parseInt(game.computer.states[turnCounter-2]) + increment > 8 ? parseInt(game.computer.states[turnCounter-2]) - increment : parseInt(game.computer.states[turnCounter-2])+increment ;
-          console.log("random1:"+randomCell);
-          break;
-        }
-        
-      }while(i<=winningStates.length)
+      gameOver();
+  }
+  else
+  {
+  // set computer state for computer turn
+  let computerState=getComputerState();
 
-   console.log(game.player.states.includes(randomCell.toString()));
-   console.log(game.computer.states.includes(randomCell.toString()));
-  
-  } while( game.player.states.includes(randomCell.toString()) || game.computer.states.includes(randomCell.toString()));
+  console.log("computer-random="+ computerState); 
  
-  console.log("computer-random="+ randomCell); 
- 
-  let computerImage='<img src='+ computerIconSrc+' />';
-  
-  setTimeout(function() {
+  //let computerImage='<img src='+ computerIconSrc+' />';
+  myPromise = new Promise(function(resolve) {
+    setTimeout(function() {resolve('<img src='+ computerIconSrc+' />')}, 900);
+  });
      for (let c of cells)
      {
-        if(c.getAttribute("itemid") == randomCell.toString() ) 
+        if(c.getAttribute("itemid") == computerState ) 
          {
               console.log(c);
-              c.innerHTML=computerImage;
+              c.innerHTML=await myPromise;
               c.setAttribute("data-type",'computer');
               game.computer.playerIcon= game.playerIcon=='x' ? 'o' : 'x';
-              game.computer.states.push(randomCell.toString());
+              game.computer.states.push(computerState);
+              removeSlectedCell(computerState);
               break;
          }
      }
-    },1000);
-     
+   
+    game.nextTurn='player'; 
     if(game.computer.states.length>=3)
      {
-       checkGameWinner('computer ' + game.computer.computerIcon);
+       console.log("check if computer winning states");
+       checkGameWinner(game.computer);
      }
-    game.nextTurn='player';
+
+    
+    
+  }
+}
+
+
+
+// remove cell number from game available cells
+function removeSlectedCell(cellId){
+  let index=game.availableCells.indexOf(cellId);
+  if(index!=-1)
+    game.availableCells.splice(index,1);
+}  
+
+function getComputerState(){
+  let match=null;
+  if(game.computer.states.length>=2)
+    {
+      match=checkMatchedState(game.computer.states);
+      if (match != null) return match;
+    }
+  if(game.player.states.length>=2)
+    {
+      match=checkMatchedState(game.player.states);
+      if (match != null) return match; 
+    }
+  return game.availableCells[Math.floor(Math.random()*game.availableCells.length)];
+  
+}     
+ 
+function checkMatchedState(playerStates){
+  if(playerStates != null)
+   { 
+    let i=0;
+    let state;
+    do{ 
+       state=winningStates[i++];
+       console.log("winning state"+ i-1 + ": "+ state);
+       console.log("playerStates: "+ playerStates);
+       let matchedStates=0;
+       playerStates.forEach( s=> {
+         if (state.includes(s))
+            ++matchedStates;
+       });
+       if((playerStates.length>=2 && matchedStates==2) || (playerStates.length==1 && matchedStates!=0))
+          for(let j=0;j<3;j++)
+          {
+            console.log("include States: "+ state[j]);
+            if(game.availableCells.includes(state[j]))
+              {
+                console.log("game.availableCells: "+ game.availableCells);
+                return state[j];
+                
+              }
+          }
+
+      } while(i<winningStates.length);
+    return null;
+  }
+}
+ 
+
+
+// check the winner player 
+function checkGameWinner(player){
+  console.log("player states : "+ player.states);
+  for(let state of winningStates)
+    if(state.every(s=> player.states.includes(s)) )
+    {
+      console.log("check : "+ state);
+      
+       window.alert(player.playerIcon + " Win !");
+       break;
+      //gameOver();
+    }
+  
+}
+
+// end the game
+function gameOver()
+{
+  console.log("game over");
+
 }
 
 });
-
-// check if winner player 
-function checkGameWinner(playerName){
-    
-}
-
 // create function for menu elements click event to change the display area.
 function changeDisplayArea(element)
 {
