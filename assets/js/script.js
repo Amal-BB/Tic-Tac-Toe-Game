@@ -108,16 +108,16 @@ async function runGame(cell,playerIconSrc,computerIconSrc)
  
   //let computerImage='<img src='+ computerIconSrc+' />';
   myPromise = new Promise(function(resolve) {
-    setTimeout(function() {resolve('<img src='+ computerIconSrc+' />')}, 900);
+    setTimeout(function() {resolve('<img src='+ computerIconSrc+' />')}, 500);
   });
      for (let c of cells)
      {
         if(c.getAttribute("itemid") == computerState ) 
          {
-              console.log(c);
               c.innerHTML=await myPromise;
               c.setAttribute("data-type",'computer');
-              game.computer.playerIcon= game.playerIcon=='x' ? 'o' : 'x';
+              console.log("computer itemid:"+c.getAttribute("itemid"));
+              game.computer.playerIcon= game.player.playerIcon=='x' ? 'o' : 'x';
               game.computer.states.push(computerState);
               removeSlectedCell(computerState);
               break;
@@ -201,13 +201,13 @@ function checkGameWinner(player){
     if(state.every(s=> player.states.includes(s)) )
     {
       console.log("check : "+ state);
-      
-       window.alert(player.playerIcon + " Win !");
+      setTimeout(() => alert(player.playerIcon + " Win !"),500); 
+      //window.alert(player.playerIcon + " Win !")
        break;
       //gameOver();
     }
   
-}
+};
 
 // end the game
 function gameOver()
