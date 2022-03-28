@@ -105,6 +105,9 @@ img{
     width:4.3em;
 }
 
+img.low_opacity{
+    opacity: .2;
+}
 .players-score{
     margin: 2em auto;
     width: fit-content;
@@ -158,29 +161,23 @@ span.score{
     margin-top: .4em;
 }
 
-/* (A) BACKGROUND */
+/* Dialog box background box*/
 #boxBack {
-    /* (A1) FULLSCREEN */
     position: fixed;
     z-index: 999;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-   
-    /* (A2) TRANSPARENT BACKGROUND */
-    background: rgba(0, 0, 0, 0.5);
-   
-    /* (A3) HIDDEN BY DEFAULT */
+    background: rgba(0, 0, 0, 0.2);
     display: none;
   }
    
-  /* (A4) ADD THIS CSS CLASS TO SHOW */
   #boxBack.show { display: block; }
    
-  /* (B) DIALOG BOX */
+  /* Dialog box */
   #boxWrap {
-    /* (B1) CENTER ON SCREEN */
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -188,14 +185,17 @@ span.score{
     min-width: 200px;
     max-width: 600px;
     padding: 0.6rem;
-    background: #fff;
+    background: rgba(255, 255, 255, 0.8);
     font-size: 1.3rem;
+    
   }
   
   #boxText{
     margin: 1rem auto;
+    font-family: serif;
   }
 
+/* Dialog button */
   #boxWrap input{
     display: inline-block;
     margin: 0.5rem;

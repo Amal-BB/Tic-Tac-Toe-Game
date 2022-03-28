@@ -93,7 +93,7 @@ async function runGame(cell,playerIconSrc,computerIconSrc)
   {
     //check if player has winning states
     console.log("check user palyer winning states");
-    checkGameWinner(game.player);
+    checkGameWinner(game.player,"Player");
   }
   console.log("player statues:" + game.player.states);
   console.log("computer statues:" + game.computer.states);
@@ -111,7 +111,7 @@ async function runGame(cell,playerIconSrc,computerIconSrc)
  
   //let computerImage='<img src='+ computerIconSrc+' />';
   myPromise = new Promise(function(resolve) {
-    setTimeout(function() {resolve('<img src='+ computerIconSrc+' />')}, 500);
+    setTimeout(function() {resolve('<img src='+ computerIconSrc+' />')}, 300);
   });
      for (let c of cells)
      {
@@ -131,10 +131,9 @@ async function runGame(cell,playerIconSrc,computerIconSrc)
     if(game.computer.states.length>=3)
      {
        console.log("check if computer winning states");
-       checkGameWinner(game.computer);
+       checkGameWinner(game.computer,"Computer");
      }
 
-    
     
   }
 }
@@ -198,25 +197,31 @@ function checkMatchedWinningState(playerStates){
 
 
 // check the winner player 
-function checkGameWinner(player){
+function checkGameWinner(player, pName){
   console.log("player states : "+ player.states);
   for(let state of winningStates)
     if(state.every(s=> player.states.includes(s)) )
     {
       console.log("check : "+ state);
-      setTimeout(() => alert(player.playerIcon + " Win !"),500); 
-      gameOver();
-       break;
+      Array.from(cells).forEach(c=> {
+        if (c.hasAttribute("data-type") && !state.includes(c.getAttribute("itemid")))
+           c.children[0].classList.add("low_opacity");
+      });
+      //setTimeout(() => alert(player.playerIcon + " Win !"),500); 
+      gameOver(pName +" "+player.playerIcon+" Win !");
+      break;
       //gameOver();
     }
   
 };
 
 // End the game
-function gameOver()
+function gameOver(msg)
 {
+  if(msg==undefined)
+   msg="Game Over";
   //show the end of game msg in dialog box 
-  dbox(null,"game Over");
+  setTimeout(()=>dbox(null,msg),1000);
    
 }
 
@@ -277,13 +282,14 @@ function changePlayerIcon(xIconSrc,oIconSrc)
         computerIcon.setAttribute("alt","x-icon");
        }
        const cells=document.getElementsByClassName('cell');
-       cells.forEach(c=> {
+       Array.from(cells).forEach((c)=> {
         if(c.hasAttribute("data-type"))   
          {
-           if(c.getAttribute("data-type").value =="player" )
-            c.getAttribute();
-         }
-
-           
+           console.log(c.getAttribute("data-type") );
+           if(c.getAttribute("data-type") =='player' )
+            c.children[0].setAttribute("src",playerIcon.src);
+           else
+            c.children[0].setAttribute("src",computerIcon.src);
+         } 
        });
 } 
