@@ -34,7 +34,7 @@ const winningStates=[
   ['0', '4', '8'],
   ['2', '4', '6']
 ];
-let newGame=true;
+let gameEnd=false;
 let turnCounter=0;  
 const cells=document.getElementsByClassName('cell');
 document.getElementById('player').addEventListener('click',function(){ changePlayerIcon(xIconSrc,oIconSrc);});
@@ -82,7 +82,7 @@ async function runGame(cell,playerIconSrc,computerIconSrc)
        
   cell.innerHTML= await myPromise;
   cell.setAttribute("data-type",'player'); 
-  game.player.playerIcon=playerIconSrc== xIconSrc ? 'x' : 'o';
+  game.player.playerIcon=playerIconSrc== xIconSrc ? 'X' : 'O';
   console.log("item id:"+cell.getAttribute("itemid"));
   game.player.states.push(cell.getAttribute("itemid"));
   // remove selected cell number from game avaliableCells
@@ -93,7 +93,7 @@ async function runGame(cell,playerIconSrc,computerIconSrc)
   {
     //check if player has winning states
     console.log("check user palyer winning states");
-    checkGameWinner(game.player,"Player");
+    gameEnd=checkGameWinner(game.player,"Player");
   }
   console.log("player statues:" + game.player.states);
   console.log("computer statues:" + game.computer.states);
@@ -103,6 +103,7 @@ async function runGame(cell,playerIconSrc,computerIconSrc)
       gameOver();
   }
   else
+  if(!gameEnd)
   {
   // set computer state for computer turn
   let computerState=getComputerState();
@@ -120,7 +121,7 @@ async function runGame(cell,playerIconSrc,computerIconSrc)
               c.innerHTML=await myPromise;
               c.setAttribute("data-type",'computer');
               console.log("computer itemid:"+c.getAttribute("itemid"));
-              game.computer.playerIcon= game.player.playerIcon=='x' ? 'o' : 'x';
+              game.computer.playerIcon= game.player.playerIcon=='X' ? 'O' : 'X';
               game.computer.states.push(computerState);
               removeSlectedCell(computerState);
               break;
@@ -131,7 +132,7 @@ async function runGame(cell,playerIconSrc,computerIconSrc)
     if(game.computer.states.length>=3)
      {
        console.log("check if computer winning states");
-       checkGameWinner(game.computer,"Computer");
+       gameEnd=checkGameWinner(game.computer,"Computer");
      }
 
     
@@ -207,19 +208,28 @@ function checkGameWinner(player, pName){
         if (c.hasAttribute("data-type") && !state.includes(c.getAttribute("itemid")))
            c.children[0].classList.add("low_opacity");
       });
+      if(pName=='Player') 
+        document.getElementById("player").children[1].textContent=++player.score;
+      else
+        document.getElementById("computer").children[1].textContent=++player.score;
+
       //setTimeout(() => alert(player.playerIcon + " Win !"),500); 
-      gameOver(pName +" "+player.playerIcon+" Win !");
-      break;
+      gameOver(pName +" "+player.playerIcon+" ...Win !");
+      return true;
       //gameOver();
     }
-  
-};
+  return false;
+}
 
 // End the game
 function gameOver(msg)
 {
   if(msg==undefined)
-   msg="Game Over";
+   {
+     msg="Game Over";
+     document.getElementById("ties").children[1].textContent=++game.ties;
+      
+   }
   //show the end of game msg in dialog box 
   setTimeout(()=>dbox(null,msg),1000);
    
