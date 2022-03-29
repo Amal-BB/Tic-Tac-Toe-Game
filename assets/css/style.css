@@ -87,8 +87,8 @@ header h1{
 }
 
 .cell{
-    width:5em;
-    height:5em;
+    width:6em;
+    height:6em;
     float: left; 
     text-align: center;    
 }
@@ -98,7 +98,7 @@ header h1{
 }
 
 .cell img{
-    margin: 0.5em;  
+    margin: 0.8em;  
 }
 
 img{
@@ -108,20 +108,30 @@ img{
 img.low_opacity{
     opacity: .2;
 }
-.players-score{
-    margin: 2em auto;
+.players-score, .players-name{
+    margin: .4em auto;
     width: fit-content;
 }
 
-.players-score span{
+.players-name span{
+   color: #000000;
+   font-size: 1.5em;
+   font-weight: 600;
+   margin:1em -.2em 0 .8em;
+}
+
+.players-score span, .players-name span{
     line-height: 1.8em;
+    display: inline-block;
+    text-align: center;
+}
+
+.players-score span{
+    width: 3.5em;
     font-size: 1em;
     border-radius: .6em;
     background-color: #5a3e4a;
     color: #ffffff;
-    display: inline-block;
-    width: 3em;
-    text-align: center;
 }
 
 #player{
