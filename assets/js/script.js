@@ -91,9 +91,11 @@ async function runGame(cell,playerIconSrc,computerIconSrc)
  {
     let myPromise = new Promise(function(resolve) {
     resolve('<img src='+ playerIconSrc +' />');});
-  game.nextTurn='computer';     
-  cell.innerHTML= await myPromise;//display player icon img on the clicked game cell
-  cell.setAttribute("data-type",'player'); 
+   
+   cell.innerHTML= await myPromise;//display player icon img on the clicked game cell
+   cell.setAttribute("data-type",'player');
+   //change play turn
+  changeTurn('computer','player');     
   game.player.playerIcon=playerIconSrc== xIconSrc ? 'X' : 'O';
   console.log("item id:"+cell.getAttribute("itemid"));
   game.player.states.push(cell.getAttribute("itemid"));
@@ -119,7 +121,7 @@ async function runGame(cell,playerIconSrc,computerIconSrc)
  
      // make a delay for img to show it in the screen before exceute next code
      myPromise = new Promise(function(resolve) {
-     setTimeout(function() {resolve('<img src='+ computerIconSrc+' />')}, 500);
+     setTimeout(function() {resolve('<img src='+ computerIconSrc+' />')}, 700);
      });
 
      // display computer icon on the game cell that has itemid = the computer state 
@@ -135,7 +137,7 @@ async function runGame(cell,playerIconSrc,computerIconSrc)
               break;
          }
      // change nextTurn 
-     game.nextTurn='player'; 
+     changeTurn('player','computer');
      if(game.computer.states.length>=3)
       {
        console.log("check if computer winning states");
@@ -145,7 +147,19 @@ async function runGame(cell,playerIconSrc,computerIconSrc)
     
     }  
 }
-
+function changeTurn(nextTurn,previousTurn)
+{
+     game.nextTurn=nextTurn;
+     console.log("nextTurn: "+nextTurn+'  previousTurn:'+previousTurn);
+     if (! document.getElementById(nextTurn).hasAttribute("class"))
+      { document.getElementById(nextTurn).classList.add("play-turn");
+        console.log("next:"+ document.getElementById(nextTurn));
+      }
+     if (document.getElementById(previousTurn).hasAttribute("class")) 
+      {document.getElementById(previousTurn).classList.remove("play-turn");
+      console.log("prev:"+ document.getElementById(previousTurn));
+      }
+}
 
 // remove the itemid value of selected cell from game available cells
 function removeSlectedCell(cellId){
@@ -225,11 +239,16 @@ function checkGameWinner(player, pName){
       });
       // calcaulate game score to display it 
       if(pName=='Player') 
-        document.getElementById("player").children[1].textContent=++player.score;
-      else
+        {
+          document.getElementById("player").children[1].textContent=++player.score;
+          changeTurn('player','computer');
+        }
+        else
+        {
         document.getElementById("computer").children[1].textContent=++player.score;
-      
-      game.nextTurn=pName.toLowerCase();
+        changeTurn('computer','player'); 
+       }
+      //game.nextTurn=pName.toLowerCase();
       console.log(game.nextTurn);
       //send winner player name to gameOver to end the game
       gameOver(pName +" "+player.playerIcon+" ...Win !");
@@ -277,6 +296,7 @@ function dbox (element,msg) {
     gameEnd=false;
     if(element.value == 'Reset') 
       {
+        changeTurn('player','computer');
         game= newGame();
         document.getElementById("player").children[1].textContent=0;
         document.getElementById("computer").children[1].textContent=0;
@@ -287,7 +307,7 @@ function dbox (element,msg) {
         game.player.states=[];
         game.computer.states=[];
         console.log(game.player.states);
-        game.availableCells=['0','1','2','3','4','5','6','7','8'];
+        game.availableCells=newGame().availableCells;
         if(game.nextTurn=='computer')
         { // (async () => {
           let playerIconSrc=document.getElementById("player-icon").alt=='x-icon' ? xIconSrc : oIconSrc;   
