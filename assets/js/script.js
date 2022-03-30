@@ -151,14 +151,8 @@ function changeTurn(nextTurn,previousTurn)
 {
      game.nextTurn=nextTurn;
      console.log("nextTurn: "+nextTurn+'  previousTurn:'+previousTurn);
-     if (! document.getElementById(nextTurn).hasAttribute("class"))
-      { document.getElementById(nextTurn).classList.add("play-turn");
-        console.log("next:"+ document.getElementById(nextTurn));
-      }
-     if (document.getElementById(previousTurn).hasAttribute("class")) 
-      {document.getElementById(previousTurn).classList.remove("play-turn");
-      console.log("prev:"+ document.getElementById(previousTurn));
-      }
+     document.getElementById(nextTurn).classList.toggle("play-turn");
+     document.getElementById(previousTurn).classList.toggle("play-turn");
 }
 
 // remove the itemid value of selected cell from game available cells
