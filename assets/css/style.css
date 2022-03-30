@@ -46,7 +46,7 @@ header h1{
 
 .game-menu{
     text-align: center;
-    margin: 1em auto;
+    margin: .7em auto;
     overflow: hidden;
     font-size: 1.7em;
     border-bottom: 1px solid #f1ebeb;;
@@ -68,7 +68,7 @@ header h1{
 
 #play-area, 
 #instruction-area{
-    margin: 2em auto;
+    margin: 1em auto;
     text-align: center;
     overflow: hidden;
     text-align: center;
@@ -125,7 +125,7 @@ img.low_opacity{
    color: #000000;
    font-size: 1.5em;
    font-weight: 600;
-   margin: 1em 0em 0 .5em;
+   margin: .5em 0em 0 .5em;
 }
 
 .players-score span, 
@@ -186,7 +186,7 @@ span.score{
 }
 
 footer{
-    margin: .5em auto;
+    margin:2em auto 1.5em auto;
     font-size: .9em;
     text-align: center;
 }
