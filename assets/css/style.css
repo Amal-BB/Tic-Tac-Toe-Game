@@ -185,6 +185,11 @@ span.score{
     margin-top: .4em;
 }
 
+footer{
+    margin: .5em auto;
+    font-size: .9em;
+    text-align: center;
+}
 /* Dialog box background box*/
 #boxBack {
     position: fixed;
