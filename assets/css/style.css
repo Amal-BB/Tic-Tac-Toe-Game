@@ -69,13 +69,21 @@ header h1{
 #play-area, 
 #instruction-area{
     margin: 1em auto;
-    text-align: center;
     overflow: hidden;
-    text-align: center;
 }
 
 #instruction-area{
     display: none;
+    padding: 0 1.5em;
+    font-size: 1.3em;
+}
+
+#instruction-area h1{
+    margin-bottom:1em ;
+}
+
+#instruction-area ol li{
+    margin:0 .5em .5em  ;
 }
 
 #play-area .game-place{

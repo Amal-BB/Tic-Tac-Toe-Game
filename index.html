@@ -43,7 +43,7 @@
      </div>
       <div class="players-score">
         
-        <span id="player"  data-descr="click to change player icon" tabindex="0" class="play-turn">
+        <span id="player"  data-descr="click to change your symble" tabindex="0" class="play-turn">
           <img id="player-icon" src="assets/images/x-icon.png" alt="x-icon"><span class="score"> 0</span>
         </span>
         <span id="ties">
@@ -57,8 +57,17 @@
     </div>
 
     <div id="instruction-area">
-      <h2>Game instuction:</h2>
-      <p> description...</p>
+      <h1> How to play the game...</h1>
+      <ol type="1">
+        <li>The game is played on a grid that's 3 squares by 3 squares.</li>
+        <li>You have option to change your symble between (X or O).</li>
+        <li>Players (You vs Computer) take turns putting their marks in empty squares.</li>
+        <li>The first player to get 3 of his marks in a (row, column, or diagonal) is the winner.</li>
+        <li>When all 9 squares are full, the game is over. If no player has 3 win, the game ends in a tie.</li>
+        <li>If you choose Continue in case of tie, then the player who has the next turn will start.</li>
+        <li>In case you choose Continue when any player win (You or Computer), the winner will have the turn to start, and scores will be added.</li>
+        <li>In case you choose Reset, a new game will start, and all scores will be reset to 0.</li>
+      </ol>
     </div>
     <footer>
       <span>Game designed by Amal-BB.. </span>
