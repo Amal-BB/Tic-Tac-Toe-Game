@@ -2,52 +2,64 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
-    <meta name="description" content="Tic-Tac-Toe, Game">
-    <meta name="keywords" content="tic tac toe, game, X's and O's game">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
+  <meta name="description" content="Tic-Tac-Toe, Game">
+  <meta name="keywords" content="tic tac toe, game, X's and O's game">
 
-    <link rel="stylesheet" href="assets/css/style.css">
-    <title>Tic-Tac-Toe Game</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Tic-Tac-Toe Game</title>
 </head>
 
 <body>
-  <div  class="page-container">
+  <!--game page -->
+  <div class="page-container">
+    <!--Start of header section-->
     <header>
-        <img src="assets/images/tic-tac-toe.png" alt="Tic-Tac-Toe logo"/>
-        <h1> Tic Tac Toe </h1>
+      <img src="assets/images/tic-tac-toe.png" alt="Tic-Tac-Toe logo" />
+      <h1> Tic Tac Toe </h1>
     </header>
+    <!--End of header section-->
+
+    <!--Start of menu section-->
     <div class="game-menu">
-      <span id="play" style="border-right: 1px solid #faf3f3;" class="active" onclick='changeDisplayArea(this)'>Play</span><span id="instruction" onclick='changeDisplayArea(this)'>Instruction</span>
+      <span id="play" style="border-right: 1px solid #faf3f3;" class="active"
+        onclick='changeDisplayArea(this)'>Play</span><span id="instruction"
+        onclick='changeDisplayArea(this)'>Instruction</span>
     </div>
+    <!--End of menu section-->
+
+    <!--Start of game play area-->
     <div id="play-area">
-     <div class="game-place">
-      <div class="row row-border">
-        <div class="cell cell-border" itemid="0"></div>
-        <div class="cell cell-border" itemid="1"></div>
-        <div class="cell" itemid="2"></div>
+      <!--Display game grid section-->
+      <div class="game-place">
+        <div class="row row-border">
+          <div class="cell cell-border" itemid="0"></div>
+          <div class="cell cell-border" itemid="1"></div>
+          <div class="cell" itemid="2"></div>
+        </div>
+        <div class="row row-border">
+          <div class="cell cell-border" itemid="3"></div>
+          <div class="cell cell-border" itemid="4"></div>
+          <diV class="cell" itemid="5"></div>
+        </div>
+        <div class="row">
+          <div class="cell cell-border" itemid="6"></div>
+          <div class="cell cell-border" itemid="7"></div>
+          <div class="cell" itemid="8"></div>
+        </div>
       </div>
-      <div class="row row-border">
-        <div class="cell cell-border" itemid="3"></div>
-        <div class="cell cell-border" itemid="4"></div>
-        <diV class="cell" itemid="5"></div>
+      <!--Display players names section-->
+      <div class="players-name">
+        <span>Player</span><span> vs</span><span>Computer</span>
       </div>
-      <div class="row">
-        <div class="cell cell-border" itemid="6"></div>
-        <div class="cell cell-border" itemid="7"></div>
-        <div  class="cell" itemid="8"></div>
-      </div>
-     </div> 
-     <div class="players-name">
-       <span>Player</span><span> vs</span><span>Computer</span>
-     </div>
+      <!--Display score section-->
       <div class="players-score">
-        
-        <span id="player"  data-descr="click to change symble" tabindex="0" class="play-turn">
+        <span id="player" data-descr="click to change symble" tabindex="0" class="play-turn">
           <img id="player-icon" src="assets/images/x-icon.png" alt="x-icon"><span class="score"> 0</span>
         </span>
         <span id="ties">
-          <span >TIES</span>
+          <span>TIES</span>
           <span class="score">0</span>
         </span>
         <span id="computer">
@@ -55,7 +67,9 @@
         </span>
       </div>
     </div>
-
+    <!--End of game play area-->
+    
+    <!--Start of instruction area -->
     <div id="instruction-area">
       <h1> How to play the game...</h1>
       <ol type="1">
@@ -65,25 +79,31 @@
         <li>The first player to get 3 of his marks in a (row, column, or diagonal) is the winner.</li>
         <li>When all 9 squares are full, the game is over. If no player has 3 win, the game ends in a tie.</li>
         <li>If you choose Continue in case of tie, then the player who has the next turn will start.</li>
-        <li>In case you choose Continue when any player win (You or Computer), the winner will have the turn to start, and scores will be added.</li>
+        <li>In case you choose Continue when any player win (You or Computer), the winner will have the turn to start,
+          and scores will be added.</li>
         <li>In case you choose Reset, a new game will start, and all scores will be reset to 0.</li>
       </ol>
     </div>
+    <!--End of instruction area -->
+    
+    <!--Start of footer section-->
     <footer>
       <span>Game designed by Amal-BB.. </span>
-       <span>copyright © 2022</span>
+      <span>copyright © 2022</span>
     </footer>
+    <!--End of footer section-->
   </div>
+  <!--End of game page-->
 
-  <!-- DIALOG BOX -->
+  <!--DIALOG BOX -->
   <div id="boxBack">
     <div id="boxWrap">
       <div id="boxTxt"></div>
       <input type="button" value="Continue" />
       <input type="button" value="Reset" />
-   </div>
+    </div>
   </div>
-  
+
   <script src="assets/js/script.js"></script>
 </body>
 
