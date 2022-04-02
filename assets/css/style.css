@@ -16,6 +16,7 @@ html {
     -ms-text-size-adjust: 100%;
 }
 
+/*Set style for small screen size devices*/
 body {
     width:95%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -24,12 +25,17 @@ body {
     margin: 0 auto;
 }
 
+img{
+    width:4.3em;
+}
+
 .page-container {
     background-color:#f1d4f1;
     margin: 5px 0;
     overflow: auto;
 }
 
+/* Header section */
 header{
     padding: .7em .5em 0;
     height: fit-content;
@@ -51,6 +57,7 @@ header h1{
      display: inline-flex;
 }
 
+/* Menu section*/
 .game-menu{
     text-align: center;
     margin: .7em auto;
@@ -73,6 +80,7 @@ header h1{
     background-color: #a52a2a;
 }
 
+/* Game play area and instruction area*/
 #play-area, 
 #instruction-area{
     margin: 1em auto;
@@ -128,13 +136,10 @@ header h1{
     margin: 0.8em;  
 }
 
-img{
-    width:4.3em;
-}
-
 img.low_opacity{
     opacity: .2;
 }
+
 .players-score, .players-name{
     margin: .4em auto;
     width: fit-content;
@@ -206,12 +211,15 @@ span.score{
     margin-top: .4em;
 }
 
+/*Footer section*/
 footer{
     margin:2em auto 1.5em auto;
     font-size: .9em;
     text-align: center;
 }
-/* Dialog box background box*/
+
+/* Dialog box section */
+/* background box */
 #boxBack {
     position: fixed;
     z-index: 999;
