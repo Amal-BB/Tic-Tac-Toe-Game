@@ -1,5 +1,5 @@
 //Wait for the DOM to finish loading before start running the game
-// Add event listeners to them game cells element 
+// Add event listeners to they game cells element 
 
 document.addEventListener("DOMContentLoaded", function () {
   const xIconSrc = 'assets/images/x-icon.png';
@@ -63,23 +63,27 @@ document.addEventListener("DOMContentLoaded", function () {
     if (event.key == "Enter")
       dbox(this, );
   });
+  /**
+   * Steps action for each game cell clicked before start or continue run the game 
+   */
+  function cellClickedAction() { 
+    // check if game not end
+    if (game.availableCells.length != 0 && !gameEnd) {
+      // check if it is not computer turn
+      if (game.nextTurn != 'computer')
+        if (!this.hasAttribute("data-type")) //check if the cell not selected before
+        { // assign players X or O icon image depend on player's choice 
+        let playerIconSrc = document.getElementById("player-icon").alt == 'x-icon' ? xIconSrc : oIconSrc;
+        let computerIconSrc = playerIconSrc == oIconSrc ? xIconSrc : oIconSrc;
+        runGame(this, playerIconSrc, computerIconSrc);
+        }
+    }
+
+  }
   // set event listener for game cells 
   for (let cell of cells) {
     console.log(cell.hasAttribute("data-type"));
-    cell.addEventListener("click", function () {
-      // check if game not end
-      if (game.availableCells.length != 0 && !gameEnd) {
-        // check if it is not computer turn
-        if (game.nextTurn != 'computer')
-          if (!this.hasAttribute("data-type")) //check if the cell not selected before
-        { // assign players X or O icon image depend of player's choice 
-          let playerIconSrc = document.getElementById("player-icon").alt == 'x-icon' ? xIconSrc : oIconSrc;
-          let computerIconSrc = playerIconSrc == oIconSrc ? xIconSrc : oIconSrc;
-          runGame(this, playerIconSrc, computerIconSrc);
-        }
-      }
-
-    });
+    cell.addEventListener("click", cellClickedAction);
   }
 
   /**  
@@ -119,9 +123,9 @@ document.addEventListener("DOMContentLoaded", function () {
       console.log("computer-random=" + computerState);
 
       // make a delay for img to show it in the screen before exceute next code
-      myPromise = new Promise(function (resolve) {
+      let myPromise = new Promise(function (resolve) {
         setTimeout(function () {
-          resolve('<img src=' + computerIconSrc + ' />')
+          resolve('<img src=' + computerIconSrc + ' />');
         }, 700);
       });
 
@@ -283,8 +287,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("player").children[1].textContent = 0;
         document.getElementById("computer").children[1].textContent = 0;
         document.getElementById("ties").children[1].textContent = 0;
-      } 
-      else {
+      } else {
         game.player.states = [];
         game.computer.states = [];
         console.log(game.player.states);
@@ -337,8 +340,7 @@ function changePlayerIcon(xIconSrc, oIconSrc, gameEnd) {
     playerIcon.setAttribute("alt", "x-icon");
     computerIcon.setAttribute("src", oIconSrc);
     computerIcon.setAttribute("alt", "o-icon");
-  } 
-  else {
+  } else {
     playerIcon.setAttribute("src", oIconSrc);
     playerIcon.setAttribute("alt", "o-icon");
     computerIcon.setAttribute("src", xIconSrc);
