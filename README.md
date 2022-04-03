@@ -14,9 +14,31 @@ A traditional **Tic Tac Toe** game has been developed in modern design for peopl
 
   * Easly understand how to play the game.
   * See if I've won, lost, or tied.
-  * Be able to track my score from game to game.
+  * Be able to track my score from one game to another.
   * Be able to change my symbol (X or O) at any stage of playing the game.
+  * Recognize player turn.
+  * Be able to reset my score to start new game.
   * Be able to play it on my mobile, tablet, or pc.
   * Feel I'm in the real challenge while playing against a computer.
+
+----
+## 2. Design
+
++ ### **Colours**
+
+    ![colours schema](media/colorsPalette.PNG)
+
+    * Colours schema of purple and red are used and [color contrast](media/colorsContrast.PNG) has been tested .
+
++ ### **Typography**
+
+   * [**Satisfy**](https://fonts.google.com/specimen/Satisfy?preview.text=Tic%20Tac%20Toe&preview.text_type=custom#about) font is used throughout the whole project. It gives a look of a timeless classic with a unique modern flair.
+
+   * Serif has been used for player symbol hover description. 
+
++ ### **Imagery**
+
+   * The selected color pattern including font and colored symbols are used to give the game a modern and attractive look. 
+
 
 
