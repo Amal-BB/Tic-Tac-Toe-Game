@@ -62,7 +62,7 @@ The project has been designed to be responsive on all device sizes.
 
       ![Game Area](media/play-Area.PNG)
 
-   * Score Area: This section will allow the user to track his score and see his symbol, also the user will be able to change his symbol by clicking on it.
+   * Score and Symbol Area: This section will allow the user to track his score and knows who is turn, which will be highlighted by a red border, also the user will be able to change his symbol by clicking on it.
 
        ![Score Area](media/scoreArea.PNG)
 
