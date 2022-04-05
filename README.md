@@ -86,3 +86,20 @@ The project has been designed to be responsive on all device sizes.
 
    * Add another option of playing against another player. This will allow the user to have more fun playing the game with his friends. 
 
+## 5. Used Technologies
+
++ ### **languages**    
+   * [Html5](https://en.wikipedia.org/wiki/HTML5), [CSS3](https://en.wikipedia.org/wiki/CSS), and [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) languages are used in this project.
+
++ ### **Other Technologies**
+
+  * [GitHub](https://github.com/) is used to store the project code and host it. 
+
+  * [Techsini](http://techsini.com/multi-mockup/index.php) was used to generate The multi device mockup (_The image attatched here in readme_). 
+
+  * [Coolors](https://coolors.co/) was used to genetate colours palette , and [Contrast Grid](https://contrast-grid.eightshapes.com) was used to check the colours contrast.
+ 
+  * [Google Font](https://developers.google.com/fonts) were used to import the used font into the style.css file.
+
+  * [Flat Icon](https://www.flaticon.com/) was used for project icons.
+
