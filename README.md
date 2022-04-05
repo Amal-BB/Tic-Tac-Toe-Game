@@ -103,3 +103,19 @@ The project has been designed to be responsive on all device sizes.
 
   * [Flat Icon](https://www.flaticon.com/) was used for project icons.
 
+ ## 6. Testing and Validtor
+
+ * The responsive view for the project has been tested in a range of screen sizes via [Chrome DevTools](https://developer.chrome.com/docs/devtools/).
+
+ * The project was tested on **Chrome**, **IE**, and **Firefox** browsers, also has tested on a variety of devices such as: _Desktop, iPhon8, iPhone, iPhon12, Galaxy A12 and Tablet_.
+
++ ### **Code Validation**
+
+   * [HTML validation]()): No errors were returned for `Html Code` when passing through the offical [W3C Validator](https://validator.w3.org/).
+
+   * [CSS Validation](): No errors were returned for `CSS Code` when passing through the offical [Jigsaw Validator](https://jigsaw.w3.org/css-validator/). 
+
+   * Project **Accessibility** has been checked through [Lighthouse](https://developers.google.com/web/tools/lighthouse) in Chrome DevTools, the result is shown below for both mobile and desktop.
+
+     ![Accessibility](media/accessibility.PNG)
+
