@@ -43,6 +43,8 @@ A traditional **Tic Tac Toe** game has been developed in modern design for peopl
   
 The project has been designed to be responsive on all device sizes.
 
+### **Existing Features**
+
 + ### **Game Logo and Heading** 
  
   * Featured at the top of the page, the Tic Tac Toe logo and heading is easy to see for the user. Upon viewing the page, the user will be able to see the name of the game.
@@ -76,4 +78,11 @@ The project has been designed to be responsive on all device sizes.
     
     * This section will have the playing instruction, it will allow the user to know how to play the game.
 
-        ![Instruction Area](media/gameInstruction.PNG) 
+        ![Instruction Area](media/gameInstruction.PNG)
+
+### **Features Left to Implement**
+
+   * Add option of playing level. This will allow the user to choose the level of playing easy or hard.
+
+   * Add another option of playing against another player. This will allow the user to have more fun playing the game with his friends. 
+
