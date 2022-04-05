@@ -16,7 +16,7 @@ html {
     -ms-text-size-adjust: 100%;
 }
 
-/*Set style for small screen size devices*/
+/* Set page style for small screen size devices*/
 body {
     width:95%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -25,8 +25,9 @@ body {
     margin: 0 auto;
 }
 
-img{
+ header img, .game-place img{
     width:4.3em;
+    height: 4.3em;
 }
 
 .page-container {
@@ -37,7 +38,7 @@ img{
 
 /* Header section */
 header{
-    padding: .7em .5em 0;
+    padding: 1em .5em 0;
     height: fit-content;
     width: fit-content;
     overflow: hidden;
@@ -213,7 +214,7 @@ span.score{
 
 /*Footer section*/
 footer{
-    margin:2em auto 1.5em auto;
+    margin:4em auto 1.5em auto;
     font-size: .9em;
     text-align: center;
 }
@@ -267,12 +268,14 @@ footer{
 /* For larg screen sizes from 800px wide and up */
 @media screen and (min-width: 800px) {
     * {
-        font-size:100%;
+        font-size:99%;
     }
     body {
         width: 75%;   
     }
-    img{
+    header img, .game-place img{
         width:64px;
+        height: 64px;
     }
+    
 }
