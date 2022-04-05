@@ -16,7 +16,7 @@
   <div class="page-container">
     <!--Start of header section-->
     <header>
-      <img src="assets/images/tic-tac-toe.png" alt="Tic-Tac-Toe logo" width="" height=""/>
+      <img src="assets/images/tic-tac-toe.png" alt="Tic-Tac-Toe logo" width="64" height="64"/>
       <h1> Tic Tac Toe </h1>
     </header>
     <!--End of header section-->
@@ -32,7 +32,7 @@
     <!--Start of game play area-->
     <div id="play-area">
       <!--Display game grid section-->
-      <div class="game-place">
+      <div class="game-place" itemscope itemtype="Tic-Tac-Toe-Game">
         <div class="row row-border">
           <div class="cell cell-border" itemid="0"></div>
           <div class="cell cell-border" itemid="1"></div>
@@ -56,14 +56,14 @@
       <!--Display score section-->
       <div class="players-score">
         <span id="player" data-descr="click to change symble" tabindex="0" class="play-turn">
-          <img id="player-icon" src="assets/images/x-icon.png" alt="x-icon" width="" height=""><span class="score"> 0</span>
+          <img id="player-icon" src="assets/images/x-icon.png" alt="x-icon" width="20" height="20"><span class="score"> 0</span>
         </span>
         <span id="ties">
           <span>TIES</span>
           <span class="score">0</span>
         </span>
         <span id="computer">
-          <img id="computer-icon" src="assets/images/o-icon.png" alt="o-icon" width="" height=""><span class="score"> 0</span>
+          <img id="computer-icon" src="assets/images/o-icon.png" alt="o-icon" width="20" height="20"><span class="score"> 0</span>
         </span>
       </div>
     </div>
