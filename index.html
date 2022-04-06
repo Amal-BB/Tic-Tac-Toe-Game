@@ -31,29 +31,29 @@
 
     <!--Start of game play area-->
     <div id="play-area">
-      <!--Display game grid section-->
-      <div class="game-place" itemscope itemtype="Tic-Tac-Toe-Game">
+      <!--Game grid section-->
+      <div class="game-place" >
         <div class="row row-border">
-          <div class="cell cell-border" itemid="0"></div>
-          <div class="cell cell-border" itemid="1"></div>
-          <div class="cell" itemid="2"></div>
+          <div class="cell cell-border" data-id="0"></div>
+          <div class="cell cell-border" data-id="1"></div>
+          <div class="cell" data-id="2"></div>
         </div>
         <div class="row row-border">
-          <div class="cell cell-border" itemid="3"></div>
-          <div class="cell cell-border" itemid="4"></div>
-          <diV class="cell" itemid="5"></div>
+          <div class="cell cell-border" data-id="3"></div>
+          <div class="cell cell-border" data-id="4"></div>
+          <diV class="cell" data-id="5"></div>
         </div>
         <div class="row">
-          <div class="cell cell-border" itemid="6"></div>
-          <div class="cell cell-border" itemid="7"></div>
-          <div class="cell" itemid="8"></div>
+          <div class="cell cell-border" data-id="6"></div>
+          <div class="cell cell-border" data-id="7"></div>
+          <div class="cell" data-id="8"></div>
         </div>
       </div>
-      <!--Display players names section-->
+      <!--Display players names -->
       <div class="players-name">
         <span>Player</span><span> vs</span><span>Computer</span>
       </div>
-      <!--Display score section-->
+      <!-- Score section-->
       <div class="players-score">
         <span id="player" data-descr="click to change symble" tabindex="0" class="play-turn">
           <img id="player-icon" src="assets/images/x-icon.png" alt="x-icon" width="20" height="20"><span class="score"> 0</span>

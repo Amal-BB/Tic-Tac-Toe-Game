@@ -102,10 +102,10 @@ document.addEventListener("DOMContentLoaded", function () {
       //change play turn
       changeTurn('computer', 'player');
       game.player.playerIcon = playerIconSrc == xIconSrc ? 'X' : 'O';
-      console.log("item id:" + cell.getAttribute("itemid"));
-      game.player.states.push(cell.getAttribute("itemid"));
+      console.log("item id:" + cell.getAttribute("data-id"));
+      game.player.states.push(cell.getAttribute("data-id"));
       // remove selected cell number from game avaliableCells
-      removeSlectedCell(cell.getAttribute("itemid"));
+      removeSlectedCell(cell.getAttribute("data-id"));
 
       // check if player reach 3 play turns or more  
       if (game.player.states.length >= 3) {
@@ -129,12 +129,12 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 700);
       });
 
-      // display computer icon on the game cell that has itemid = the computer state 
+      // display computer icon on the game cell that has data-id = the computer state 
       for (let c of cells)
-        if (c.getAttribute("itemid") == computerState) {
+        if (c.getAttribute("data-id") == computerState) {
           c.innerHTML = await myPromise; // wait until image icon is shown on the selected cell
           c.setAttribute("data-type", 'computer'); // add this attribute to cell to know it has been used by computer
-          console.log("computer itemid:" + c.getAttribute("itemid"));
+          console.log("computer data-id:" + c.getAttribute("data-id"));
           game.computer.playerIcon = game.player.playerIcon == 'X' ? 'O' : 'X'; // check which icon player has been selected
           game.computer.states.push(computerState);
           removeSlectedCell(computerState); // remove selected cell from game avalible cells
@@ -162,13 +162,13 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById(previousTurn).classList.toggle("play-turn");
   }
 
-  // remove the itemid value of selected cell from game available cells
+  // remove the data-id value of selected cell from game available cells
   function removeSlectedCell(cellId) {
     let index = game.availableCells.indexOf(cellId);
     if (index != -1)
       game.availableCells.splice(index, 1);
   }
-  // choose best state value (cell itemid) for computer turn
+  // choose best state value (cell data-id) for computer turn
   function getComputerState() {
     let match = null;
     if (game.computer.states.length >= 2) {
@@ -181,7 +181,7 @@ document.addEventListener("DOMContentLoaded", function () {
       match = checkMatchedWinningState(game.player.states);
       if (match != null) return match;
     }
-    // select randome state (cell itemid) from game avaliable cells
+    // select randome state (cell data-id) from game avaliable cells
     return game.availableCells[Math.floor(Math.random() * game.availableCells.length)];
 
   }
@@ -189,7 +189,7 @@ document.addEventListener("DOMContentLoaded", function () {
   /**
    * search for matched game winning state to assign it for computer state turn
    * @param {*} playerStates, could be player or computer previous states
-   * @returns matched available cell itemid of winningSatate or null 
+   * @returns matched available cell data-id of winningSatate or null 
    */
   function checkMatchedWinningState(playerStates) {
     if (playerStates != null) {
@@ -207,7 +207,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if ((playerStates.length >= 2 && matchedStates == 2) || (playerStates.length == 1 && matchedStates != 0))
           for (let j = 0; j < 3; j++) {
             console.log("include States: " + state[j]);
-            // check if the cell itemid of the matched winning state is not selected
+            // check if the cell data-id of the matched winning state is not selected
             if (game.availableCells.includes(state[j])) {
               console.log("game.availableCells: " + game.availableCells);
               return state[j];
@@ -229,7 +229,7 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log("check : " + state);
         //keep just icons on cells of winning state highlighted 
         Array.from(cells).forEach(c => {
-          if (c.hasAttribute("data-type") && !state.includes(c.getAttribute("itemid")))
+          if (c.hasAttribute("data-type") && !state.includes(c.getAttribute("data-id")))
             c.children[0].classList.add("low_opacity");
         });
         // calcaulate game score to display it 
