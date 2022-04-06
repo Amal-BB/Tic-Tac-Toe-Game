@@ -111,9 +111,11 @@ The project has been designed to be responsive on all device sizes.
 
 + ### **Code Validation**
 
-   * [HTML validation]()): No errors were returned for `Html Code` when passing through the offical [W3C Validator](https://validator.w3.org/).
+   * [HTML validation](media/htmlValidator.PNG): No errors were returned for `Html Code` when passing through the offical [W3C Validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Famal-bb.github.io%2FTic-Tac-Toe-Game%2F).
 
-   * [CSS Validation](): No errors were returned for `CSS Code` when passing through the offical [Jigsaw Validator](https://jigsaw.w3.org/css-validator/). 
+   * [CSS Validation](media/cssValidation.PNG): No errors were returned for `CSS Code` when passing through the offical [Jigsaw Validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Famal-bb.github.io%2FTic-Tac-Toe-Game%2F). 
+
+   * [JS Validation](media/jsHint.PNG): No errors were returned for `Java Script Code` when passing through the offical [JSHint Validator](https://jshint.com/)
 
    * Project **Accessibility** has been checked through [Lighthouse](https://developers.google.com/web/tools/lighthouse) in Chrome DevTools, the result is shown below for both mobile and desktop.
 
