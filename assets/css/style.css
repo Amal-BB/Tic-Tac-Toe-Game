@@ -44,6 +44,7 @@ header{
     overflow: hidden;
     margin: 0 auto;
     text-align: center;
+    display: table;
 }
 
 header img{
@@ -111,6 +112,7 @@ header h1{
 #play-area .game-place{
     margin: 0 auto;
     width: fit-content;
+    display: table;
 }
 
 .game-place .row{
