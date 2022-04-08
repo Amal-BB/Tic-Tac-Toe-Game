@@ -12,7 +12,7 @@ A traditional **Tic Tac Toe** game has been developed in modern design for peopl
    As a *visiting user*, I would like to:
 
   * Easly understand how to play the game.
-  * See if I've won, lost, or tied.
+  * Know if I've won, lost, or tied.
   * Be able to track my score from one game to another.
   * Be able to change my symbol (X or O) at any stage of playing the game.
   * Realize which player has the current turn.
@@ -64,13 +64,19 @@ The project has been designed to be responsive on all device sizes.
 
       ![Game Area](media/play-Area.PNG)
 
-   * Score and Symbol Area: This section will allow the user to track his score and knows who is turn, which will be highlighted by a red border, also the user will be able to change his symbol by clicking on it.
+   * Score and Symbol Area: 
+      - This section will display players' names, symbols and scores.
+      - It allows the user to track his score and knows whose turn, which will be highlighted by a red border.
 
-       ![Score Area](media/scoreArea.PNG)
+         ![Score Area](media/scoreArea.PNG)
+
+      - The user will be able to change his symbol by clicking on it, the message of (click to change symbol) will appears when the player symbol is hovered.
+
+         ![Symbol Change Msg](media/symbolMsg.png)
 
 + ### **Dialog Box**
     
-    * This dialog Box will allow the user to know who wins the game or if it ended with tie. The user will be able to choose to continue playing or restart a new game. 
+    * This dialog box appears each time the game end. It allows the user to know who wins the game or if it ended with a tie. The user will be able to choose to continue playing or start a new game. 
       
        ![Dialog Box](media/DialogBox.PNG)
 
@@ -120,4 +126,37 @@ The project has been designed to be responsive on all device sizes.
    * Project **Accessibility** has been checked through [Lighthouse](https://developers.google.com/web/tools/lighthouse) in Chrome DevTools, the result is shown below for both mobile and desktop.
 
      ![Accessibility](media/accessibility.PNG)
+
++ ### **Testing User Stories Cases**
+
+   * Easly understand how to play the game.
+     
+      + Upon entering the game page, the user is greeted with a clear menu has two sections (play and instruction), the user can navigate to instruction where he will find how to play the game.
+      + The menu is located in an easily identifiable location and the active page will be highlighted by red color in the menu.
+      + The instruction on how to play the game is ordered in points which is easy to follow and understand.
+
+   * Know if I've won, lost, or tied.
+     
+      + In case the user or computer has 3 selected cells matching one of the winning states, then just these cells will stay highlighted.
+      + The dialog box will appear with a message that shows the winner's name with his symbol. 
+      + In case the game ends with a tie, the dialog box will show the message "Game Over".  
+
+   * Be able to track my score from one game to another.
+
+     + The score area is located under the game grid, It has three boxes one for the player score, one for the tie, and one for the computer. 
+     + Each time the game end by winning state or tie state the score box is automatically updated.
+      
+   * Be able to change my symbol (X or O) at any stage of playing the game.
+
+     + The player symbol is shown over the player score box, by clicking on it the symbol will be changed from ( X to O ) or vice versa
+
+   * Realize which player has the current turn.
+     
+     + The box under the player's name (player or computer) which contains his symbol and score will be highlighted by a red border in case of his turn.
+
+   * Be able to reset my score to start new game.
+   * Be able to play it on my mobile, tablet, or pc.
+   * Feel I'm in the real challenge while playing against a computer.
+    
+   
 
