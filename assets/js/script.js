@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
         states: [],
         score: 0,
       },
-      ties: 0,
+      tie: 0,
       availableCells: ['0', '1', '2', '3', '4', '5', '6', '7', '8'],
     };
     return nGame;
@@ -258,8 +258,8 @@ document.addEventListener("DOMContentLoaded", function () {
   function gameOver(msg) {
     if (msg == undefined) {
       msg = "Game Over";
-      // calculate the game ties score to save it and display it
-      document.getElementById("ties").children[1].textContent = ++game.ties;
+      // calculate the game tie score to save it and display it
+      document.getElementById("tie").children[1].textContent = ++game.tie;
     }
     //show the msg that included the winner name in a dialog box 
     setTimeout(() => dbox(null, msg), 900);
@@ -286,7 +286,7 @@ document.addEventListener("DOMContentLoaded", function () {
         game = newGame();
         document.getElementById("player").children[1].textContent = 0;
         document.getElementById("computer").children[1].textContent = 0;
-        document.getElementById("ties").children[1].textContent = 0;
+        document.getElementById("tie").children[1].textContent = 0;
       } else {
         game.player.states = [];
         game.computer.states = [];
