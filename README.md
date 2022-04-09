@@ -66,7 +66,7 @@ The project has been designed to be responsive on all device sizes.
 
    * Score and Symbol Area: 
       - This section will display players' names, symbols and scores.
-      - It allows the user to track his score and knows whose turn, which will be highlighted by a red border.
+      - It allows the user to track his score and knows who has a turn, which will be highlighted by a red border.
 
          ![Score Area](media/scoreArea.PNG)
 
@@ -78,7 +78,7 @@ The project has been designed to be responsive on all device sizes.
     
     * This dialog box appears each time the game end. It allows the user to know who wins the game or if it ended with a tie. The user will be able to choose to continue playing or start a new game. 
       
-       ![Dialog Box](media/DialogBox.PNG)
+       ![Dialog Box](media/dialogBox.PNG)
 
 + ### **Instruction Area**
     
@@ -123,7 +123,7 @@ The project has been designed to be responsive on all device sizes.
 
    * [JS Validation](media/jsHint.PNG): No errors were returned for `Java Script Code` when passing through the offical [JSHint Validator](https://jshint.com/)
 
-   * Project **Accessibility** has been checked through [Lighthouse](https://developers.google.com/web/tools/lighthouse) in Chrome DevTools, the result is shown below for both mobile and desktop.
+   * Project **Accessibility** has been checked through [Lighthouse](https://developers.google.com/web/tools/lighthouse) in Chrome DevTools, the result is shown below.
 
      ![Accessibility](media/accessibility.PNG)
 
@@ -138,8 +138,8 @@ The project has been designed to be responsive on all device sizes.
    * Know if I've won, lost, or tied.
      
       + In case the user or computer has 3 selected cells matching one of the winning states, then just these cells will stay highlighted.
-      + The dialog box will appear with a message that shows the winner's name with his symbol. 
-      + In case the game ends with a tie, the dialog box will show the message "Game Over".  
+      + The dialog box will appear a message that shows the winner's name with his symbol. 
+      + In case the game ends with a tie, the dialog box will appear with the message "Game Over".  
 
    * Be able to track my score from one game to another.
 
@@ -166,6 +166,24 @@ The project has been designed to be responsive on all device sizes.
    * Feel I'm in a real challenge while playing against a computer.
 
       + The game has been coded to choose the best random states for the computer that let it able to win the user and do not give chance for the user to win it easily.
+
+
+## 7. Bugs and Fixing
+
+All reported bugs from testing has been fixed.
+
++ ### **Fixed Bugs**
+
+   * Fixed an issue where the user symbol wouldn't change correctly in the game grid cells when the user click on the player symbol box to change his game symbol. This issue was solved by fixing the JS code inside the function `changePlayerIcon()`.
+
+   * Fixed an issue of the delay in showing the game symbols on cells, which caused a display of the dialog box, and execute the next codes before all symbols have appeared in the game grid cells. This issue has been addressed by using the JS `sleep-await` and `setTimeOut` function.
+
+   * Fixed an issue where the style of the (symbol and score) box wasn't changed correctly to be highlighted with a red border to indicate who has a turn while playing the game. By updating the JS code of `changeTurn` function via using `classList.toggle` the issue was solved.
+
+   * Fixed an issue for the messy viewing of the game grid and the game logo when tested in IE and Firefox browsers. This issue has been solved by adding `display:table` property in the CSS file because these browsers do not support the value of `width:fit-content`. 
+
+     ![IE browser issue](media/ieError.PNG)
+      
     
    
 
