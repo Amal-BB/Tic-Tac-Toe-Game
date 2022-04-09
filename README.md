@@ -16,9 +16,9 @@ A traditional **Tic Tac Toe** game has been developed in modern design for peopl
   * Be able to track my score from one game to another.
   * Be able to change my symbol (X or O) at any stage of playing the game.
   * Realize which player has the current turn.
-  * Be able to reset my score to start new game.
+  * Be able to reset my score to start a new game.
   * Be able to play it on my mobile, tablet, or pc.
-  * Feel I'm in the real challenge while playing against a computer.
+  * Feel I'm in a real challenge while playing against a computer.
 
 ----
 ## 2. Design
@@ -148,15 +148,24 @@ The project has been designed to be responsive on all device sizes.
       
    * Be able to change my symbol (X or O) at any stage of playing the game.
 
-     + The player symbol is shown over the player score box, by clicking on it the symbol will be changed from ( X to O ) or vice versa
+     + The player symbol is shown over the player score box, by clicking on it the symbol will be changed from ( X to O ) or vice versa.
 
    * Realize which player has the current turn.
      
-     + The box under the player's name (player or computer) which contains his symbol and score will be highlighted by a red border in case of his turn.
+     + The box under the name of (player or computer) which contains the symbol and score will be highlighted by a red border for the one who has the turn.
 
-   * Be able to reset my score to start new game.
+   * Be able to reset my score to start a new game.
+
+     + Each time the game end, the dialog box will appear with two options (Continue and Restart).
+     + When the user chooses Restart, all scores will be reset to 0, thus the user will be able to start a new game..
+
    * Be able to play it on my mobile, tablet, or pc.
-   * Feel I'm in the real challenge while playing against a computer.
+
+     + The game page has been designed to be responsive on all device sizes and to be easy to use.
+
+   * Feel I'm in a real challenge while playing against a computer.
+
+      + The game has been coded to choose the best random states for the computer that let it able to win the user and do not give chance for the user to win it easily.
     
    
 
