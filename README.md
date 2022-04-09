@@ -66,7 +66,7 @@ The project has been designed to be responsive on all device sizes.
 
    * Score and Symbol Area: 
       - This section will display players' names, symbols and scores.
-      - It allows the user to track his score and knows who has a turn, which will be highlighted by a red border.
+      - It allows the user to track his score and know who has a turn, which will be highlighted by a red border.
 
          ![Score Area](media/scoreArea.PNG)
 
@@ -113,17 +113,18 @@ The project has been designed to be responsive on all device sizes.
 
  * The responsive view for the project has been tested in a range of screen sizes via [Chrome DevTools](https://developer.chrome.com/docs/devtools/).
 
- * The project was tested on **Chrome**, **IE**, and **Firefox** browsers, also has tested on a variety of devices such as: _Desktop, iPhon8, iPhone, iPhon12, Galaxy A12 and Tablet_.
+ * The project was tested on **Chrome**, **IE**, and **Firefox** browsers, furthermore have been tested on a variety of devices such as: _Desktop, iPhon8, iPhone, iPhon12, Galaxy A12 and Tablet_.
+
 
 + ### **Code Validation**
 
-   * [HTML validation](media/htmlValidator.PNG): No errors were returned for `Html Code` when passing through the offical [W3C Validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Famal-bb.github.io%2FTic-Tac-Toe-Game%2F).
+   * [HTML Validation Result](media/htmlValidator.PNG) : No errors were returned for **Html Code** when passing through the offical [W3C Validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Famal-bb.github.io%2FTic-Tac-Toe-Game%2F).
 
-   * [CSS Validation](media/cssValidation.PNG): No errors were returned for `CSS Code` when passing through the offical [Jigsaw Validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Famal-bb.github.io%2FTic-Tac-Toe-Game%2F). 
+   * [CSS Validation Result](media/cssValidation.PNG) : No errors were returned for **CSS Code** when passing through the offical [Jigsaw Validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Famal-bb.github.io%2FTic-Tac-Toe-Game%2F). 
 
-   * [JS Validation](media/jsHint.PNG): No errors were returned for `Java Script Code` when passing through the offical [JSHint Validator](https://jshint.com/)
+   * [JS Validation Result](media/jsHint.PNG) : No errors were returned for **Java Script Code** when passing through the offical [JSHint Validator](https://jshint.com/)
 
-   * Project **Accessibility** has been checked through [Lighthouse](https://developers.google.com/web/tools/lighthouse) in Chrome DevTools, the result is shown below.
+   * Project **Accessibility** has been checked through [Lighthouse](https://developers.google.com/web/tools/lighthouse) in Chrome DevTools. The result is shown below.
 
      ![Accessibility](media/accessibility.PNG)
 
@@ -148,11 +149,11 @@ The project has been designed to be responsive on all device sizes.
       
    * Be able to change my symbol (X or O) at any stage of playing the game.
 
-     + The player symbol is shown over the player score box, by clicking on it the symbol will be changed from ( X to O ) or vice versa.
+     + The player symbol is shown over the player score box, by clicking on it before starting the game or while playing, then the symbol will be changed from ( X to O ) or vice versa.
 
    * Realize which player has the current turn.
      
-     + The box under the name of (player or computer) which contains the symbol and score will be highlighted by a red border for the one who has the turn.
+     + The (symbol and score) box under the name of (player or computer) will be highlighted by a red border for the one who has the current turn.
 
    * Be able to reset my score to start a new game.
 
@@ -183,7 +184,69 @@ All reported bugs from testing has been fixed.
    * Fixed an issue for the messy viewing of the game grid and the game logo when tested in IE and Firefox browsers. This issue has been solved by adding `display:table` property in the CSS file because these browsers do not support the value of `width:fit-content`. 
 
      ![IE browser issue](media/ieError.PNG)
-      
+
+## 8. Deployment
+  
+* ### **Via Gitpod**
+  
+  The project code has been run in Gitpod using following steps:
+
+  1. Install the Gitpod browser extension.
+  
+  1. Log into your Github account, then navigate to your project [Repository](https://docs.github.com/en/repositories).
+
+  1. You will find a green Gitpod button has appeared.
+
+  1. Press **Gitpod** button, you will direct to GitPod page.
+  
+  1. At the first time you need to authorize, so press **Authorize Gigpod**, then you will be directed to Create Account page.
+  
+  1. Click accept terms to start up your workspace in Gitpod.
+
+* ### **Via GitHub Pages**
+  
+  The project was deployed via Github pages by using following steps:
+
+  1. Log into your Github account.
+
+  1. Navigate to the Repository, click the **Setting** button at the top menu.
+  
+  1. Click the **Pages** option, located on the left-side menu.
+  
+  1. Under **Source**, click the dropdown list titled "None", and select branch named "main". 
+  
+  1. Click **Save**. The site now deployed and the published site link will be created.
+
+
+* ### **Making a Local Clone**
+
+  1. Log in to GitHub and locate the GitHub Repository.
+
+  1. Under the repository name, click "Clone or download".
+
+  1. To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
+
+  1. Open Git Bash.
+
+  1. Change the current working directory to the location where  you want the cloned directory to be made.
+
+  1. Type `git clone`, and then paste the URL you copied in Step 3.
+
+      ` $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY `
+
+   1. Press Enter. Your local clone will be created.
+   
+       `$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY`
+   
+       `Cloning into  CI-Clone ...`
+     
+       `remote: Counting objects: 10, done.`
+
+       `remote: Compressing objects: 100% (8/8), done.`
+     
+       `remove: Total 10 (delta 1), reused 10 (delta 1)`
+     
+       `Unpacking objects: 100% (10/10), done.`   
     
    
 
