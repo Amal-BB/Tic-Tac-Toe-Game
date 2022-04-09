@@ -246,7 +246,23 @@ All reported bugs from testing has been fixed.
      
        `remove: Total 10 (delta 1), reused 10 (delta 1)`
      
-       `Unpacking objects: 100% (10/10), done.`   
+       `Unpacking objects: 100% (10/10), done.`  
+
+## 9. Credits
+ 
+ * ### **Code**
+
+ The project code was developed by me (Amal-BB), with some ideas modified and some bugs solved by the following tutorials. 
+
+   * The general idea of how creating the game variables was taken from [Webtips tutorial](https://www.webtips.dev/tic-tac-toe-in-javascript) with new modifyings have been added and developed for the current project.
+
+   * Creating dialog box was followed [Code Boxx tutorial](https://code-boxx.com/display-messages-html-javascript/) with some modifications to suit.
+
+   * Using JavaScript Async to fix the issue of execution delay was followed [W3schools tutorial](https://www.w3schools.com/js/js_async.asp).
+
+   * Solving the issue of IE and Firefox not supporting `width:fit-content` was taken from [stackoverflow](https://stackoverflow.com/questions/49095440/width-fit-content-working-on-chrome-but-not-explorer).
+
+
     
    
 
