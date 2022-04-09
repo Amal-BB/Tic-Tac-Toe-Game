@@ -20,7 +20,7 @@ A traditional **Tic Tac Toe** game has been developed in modern design for peopl
   * Be able to play it on my mobile, tablet, or pc.
   * Feel I'm in a real challenge while playing against a computer.
 
-----
+
 ## 2. Design
 
 + ### **Colours**
@@ -111,7 +111,7 @@ The project has been designed to be responsive on all device sizes.
 
  ## 6. Testing and Validtor
 
- * The responsive view for the project has been tested in a range of screen sizes via [Chrome DevTools](https://developer.chrome.com/docs/devtools/).
+ * The responsive view for the project has been tested in a range of screen sizes via [Chrome DevTools](https://developer.chrome.com/docs/devtools/). The style of the page was designed to suit small screen devices and media queries have been added for large screen sizes from 800px.
 
  * The project was tested on **Chrome**, **IE**, and **Firefox** browsers, furthermore have been tested on a variety of devices such as: _Desktop, iPhon8, iPhone, iPhon12, Galaxy A12 and Tablet_.
 
@@ -249,18 +249,23 @@ All reported bugs from testing has been fixed.
        `Unpacking objects: 100% (10/10), done.`  
 
 ## 9. Credits
- 
- * ### **Code**
+
+* ### **Code**
 
  The project code was developed by me (Amal-BB), with some ideas modified and some bugs solved by the following tutorials. 
 
-   * The general idea of how creating the game variables was taken from [Webtips tutorial](https://www.webtips.dev/tic-tac-toe-in-javascript) with new modifyings have been added and developed for the current project.
+   * The general idea of how creating the game variables was taken from [Webtips tutorial](https://www.webtips.dev/tic-tac-toe-in-javascript) with new modifications have been added and developed for the current project.
 
    * Creating dialog box was followed [Code Boxx tutorial](https://code-boxx.com/display-messages-html-javascript/) with some modifications to suit.
 
    * Using JavaScript Async to fix the issue of execution delay was followed [W3schools tutorial](https://www.w3schools.com/js/js_async.asp).
 
    * Solving the issue of IE and Firefox not supporting `width:fit-content` was taken from [stackoverflow](https://stackoverflow.com/questions/49095440/width-fit-content-working-on-chrome-but-not-explorer).
+
+
+* ### **Images** 
+
+    * The project logo and symbols images were taken from [Flat Icon](https://www.flaticon.com/). 
 
 
     
