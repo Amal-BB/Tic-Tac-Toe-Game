@@ -82,7 +82,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   // set event listener for game cells 
   for (let cell of cells) {
-    console.log(cell.hasAttribute("data-type"));
     cell.addEventListener("click", cellClickedAction);
   }
 
@@ -102,7 +101,6 @@ document.addEventListener("DOMContentLoaded", function () {
       //change play turn
       changeTurn('computer', 'player');
       game.player.playerIcon = playerIconSrc == xIconSrc ? 'X' : 'O';
-      console.log("item id:" + cell.getAttribute("data-id"));
       game.player.states.push(cell.getAttribute("data-id"));
       // remove selected cell number from game avaliableCells
       removeSlectedCell(cell.getAttribute("data-id"));
@@ -110,18 +108,13 @@ document.addEventListener("DOMContentLoaded", function () {
       // check if player reach 3 play turns or more  
       if (game.player.states.length >= 3) {
         //check if player has winning states
-        console.log("check user palyer winning states");
         gameEnd = checkGameWinner(game.player, "Player");
       }
     }
-    console.log("player statues:" + game.player.states);
-    console.log("computer statues:" + game.computer.states);
-
+    
     if (!gameEnd) {
       // set computer state for computer turn
       let computerState = getComputerState();
-      console.log("computer-random=" + computerState);
-
       // make a delay for img to show it in the screen before exceute next code
       let myPromise = new Promise(function (resolve) {
         setTimeout(function () {
@@ -134,7 +127,6 @@ document.addEventListener("DOMContentLoaded", function () {
         if (c.getAttribute("data-id") == computerState) {
           c.innerHTML = await myPromise; // wait until image icon is shown on the selected cell
           c.setAttribute("data-type", 'computer'); // add this attribute to cell to know it has been used by computer
-          console.log("computer data-id:" + c.getAttribute("data-id"));
           game.computer.playerIcon = game.player.playerIcon == 'X' ? 'O' : 'X'; // check which icon player has been selected
           game.computer.states.push(computerState);
           removeSlectedCell(computerState); // remove selected cell from game avalible cells
@@ -143,7 +135,6 @@ document.addEventListener("DOMContentLoaded", function () {
       // change nextTurn 
       changeTurn('player', 'computer');
       if (game.computer.states.length >= 3) {
-        console.log("check if computer winning states");
         //check if computer has winning states
         gameEnd = checkGameWinner(game.computer, "Computer");
       }
@@ -152,12 +143,11 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   /**
-   * Chang game play turn and, 
+   * Change game play turn and, 
    * Set play-turn style to current player turn 
    */
   function changeTurn(nextTurn, previousTurn) {
     game.nextTurn = nextTurn;
-    console.log("nextTurn: " + nextTurn + '  previousTurn:' + previousTurn);
     document.getElementById(nextTurn).classList.toggle("play-turn");
     document.getElementById(previousTurn).classList.toggle("play-turn");
   }
@@ -197,8 +187,6 @@ document.addEventListener("DOMContentLoaded", function () {
       let state;
       do {
         state = winningStates[i++];
-        console.log("winning state" + i - 1 + ": " + state);
-        console.log("playerStates: " + playerStates);
         let matchedStates = 0;
         playerStates.forEach(s => {
           if (state.includes(s))
@@ -206,13 +194,9 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         if ((playerStates.length >= 2 && matchedStates == 2) || (playerStates.length == 1 && matchedStates != 0))
           for (let j = 0; j < 3; j++) {
-            console.log("include States: " + state[j]);
             // check if the cell data-id of the matched winning state is not selected
-            if (game.availableCells.includes(state[j])) {
-              console.log("game.availableCells: " + game.availableCells);
+            if (game.availableCells.includes(state[j])) 
               return state[j];
-
-            }
           }
 
       } while (i < winningStates.length);
@@ -222,11 +206,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // check the winner player 
   function checkGameWinner(player, pName) {
-    console.log("player states : " + player.states);
     // check if player or computer's selected states matched one of the game winning states
     for (let state of winningStates)
       if (state.every(s => player.states.includes(s))) {
-        console.log("check : " + state);
         //keep just icons on cells of winning state highlighted 
         Array.from(cells).forEach(c => {
           if (c.hasAttribute("data-type") && !state.includes(c.getAttribute("data-id")))
@@ -240,8 +222,7 @@ document.addEventListener("DOMContentLoaded", function () {
           document.getElementById("computer").children[1].textContent = ++player.score;
           changeTurn('computer', 'player');
         }
-        //game.nextTurn=pName.toLowerCase();
-        console.log(game.nextTurn);
+        
         //send winner player name to gameOver to end the game
         gameOver(pName + " " + player.playerIcon + " ...Win !");
         return true;
@@ -290,14 +271,12 @@ document.addEventListener("DOMContentLoaded", function () {
       } else {
         game.player.states = [];
         game.computer.states = [];
-        console.log(game.player.states);
         game.availableCells = newGame().availableCells;
-        if (game.nextTurn == 'computer') { // (async () => {
+        if (game.nextTurn == 'computer') { 
           let playerIconSrc = document.getElementById("player-icon").alt == 'x-icon' ? xIconSrc : oIconSrc;
           let computerIconSrc = playerIconSrc == oIconSrc ? xIconSrc : oIconSrc;
           runGame(null, playerIconSrc, computerIconSrc);
 
-          // })();
         }
       }
     }
@@ -333,8 +312,7 @@ function changePlayerIcon(xIconSrc, oIconSrc, gameEnd) {
   if (gameEnd) return; // check if game is in end state
   const playerIcon = document.getElementById("player-icon");
   const computerIcon = document.getElementById("computer-icon");
-  console.log(playerIcon);
-  console.log(playerIcon.alt);
+
   if (playerIcon.alt == "o-icon") {
     playerIcon.setAttribute("src", xIconSrc);
     playerIcon.setAttribute("alt", "x-icon");
@@ -350,7 +328,6 @@ function changePlayerIcon(xIconSrc, oIconSrc, gameEnd) {
   // change all displayed icons on the game grid 
   Array.from(cells).forEach((c) => {
     if (c.hasAttribute("data-type")) {
-      console.log(c.getAttribute("data-type"));
       if (c.getAttribute("data-type") == 'player')
         c.children[0].setAttribute("src", playerIcon.src);
       else
