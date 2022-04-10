@@ -252,7 +252,7 @@ All reported bugs from testing has been fixed.
 
 * ### **Code**
 
-   The project code was developed by me (Amal-BB), with some ideas modified and some bugs solved by the following tutorials. 
+   The project code was developed by me (Amal-BB), with some ideas have been modified and some bugs have been fixed via the following tutorials. 
 
    * The general idea of how creating the game variables was taken from [Webtips tutorial](https://www.webtips.dev/tic-tac-toe-in-javascript) with new modifications have been added and developed for the current project.
 
