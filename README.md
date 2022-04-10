@@ -92,7 +92,7 @@ The project has been designed to be responsive on all device sizes.
 
    * Add another option of playing against another player. This will allow the user to have more fun playing the game with his friends. 
 
-## 5. Used Technologies
+## 4. Used Technologies
 
 + ### **languages**    
    * [Html5](https://en.wikipedia.org/wiki/HTML5), [CSS3](https://en.wikipedia.org/wiki/CSS), and [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) languages are used in this project.
@@ -109,7 +109,7 @@ The project has been designed to be responsive on all device sizes.
 
   * [Flat Icon](https://www.flaticon.com/) was used for project icons.
 
- ## 6. Testing and Validtor
+ ## 5. Testing and Validtor
 
  * The responsive view for the project has been tested in a range of screen sizes via [Chrome DevTools](https://developer.chrome.com/docs/devtools/). The style of the page was designed to suit small screen devices and media queries have been added for large screen sizes from 800px.
 
@@ -169,7 +169,7 @@ The project has been designed to be responsive on all device sizes.
       + The game has been coded to get the best random states for the computer turn that let the computer win the game, or close the way in front of the user to complete his winning state.
 
 
-## 7. Bugs and Fixing
+## 6. Bugs and Fixing
 
 All reported bugs from testing has been fixed.
 
@@ -185,7 +185,7 @@ All reported bugs from testing has been fixed.
 
      ![IE browser issue](media/ieError.PNG)
 
-## 8. Deployment
+## 7. Deployment
   
 * ### **Via Gitpod**
   
@@ -248,7 +248,7 @@ All reported bugs from testing has been fixed.
      
        `Unpacking objects: 100% (10/10), done.`  
 
-## 9. Credits
+## 8. Credits
 
 * ### **Code**
 
