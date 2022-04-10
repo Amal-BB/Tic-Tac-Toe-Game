@@ -162,11 +162,11 @@ The project has been designed to be responsive on all device sizes.
 
    * Be able to play it on my mobile, tablet, or pc.
 
-     + The game page has been designed to be responsive on all device sizes and to be easy to use.
+     + The game page has been designed to be responsive on all device sizes and to be easy to use by using media queries in style.css file.
 
    * Feel I'm in a real challenge while playing against a computer.
 
-      + The game has been coded to choose the best random states for the computer that let it able to win the user and do not give chance for the user to win it easily.
+      + The game has been coded to get the best random states for the computer turn that let the computer win the game, or close the way in front of the user to complete his winning state.
 
 
 ## 7. Bugs and Fixing
