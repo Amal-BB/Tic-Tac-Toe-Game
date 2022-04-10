@@ -90,7 +90,7 @@ The project has been designed to be responsive on all device sizes.
 
    * Add option of playing level. This will allow the user to choose the level of playing easy or hard.
 
-   * Add another option of playing against another player. This will allow the user to have more fun playing the game with his friends. 
+   * Add option of playing against another player. This will allow the user to have more fun playing the game with his friends. 
 
 ## 4. Used Technologies
 
